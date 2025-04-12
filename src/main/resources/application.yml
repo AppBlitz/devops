@@ -1,0 +1,10 @@
+spring:
+  config:
+    import: configuration.yml
+  data:
+    mongodb:
+      host: ${application.database.mongo.host}
+      port: ${application.database.mongo.port}
+      database: ${application.database.mongo.name.database}
+  application:
+    name: ${application.name}

@@ -1,0 +1,14 @@
+package com.dev.ops.model.enums;
+
+public enum NumSpecialization {
+  PHYSIOTHERAPY,
+  DENTISTRY,
+  GENERALMEDICINE,
+  INTERNALMEDICINE,
+  GENERALSURGERY,
+  OFTALMOLOGY,
+  PSYCHOLOGY,
+  PSYCHIATRY,
+  UROLOGY,
+  COSMETOLOGY
+}
