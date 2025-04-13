@@ -1,15 +1,35 @@
 package com.dev.ops.controller.implemtation;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-public class UserController {
+import com.dev.ops.controller.interfaces.UserInterface;
+import com.dev.ops.dto.appoinment.AppoinmentDto;
+import com.dev.ops.dto.user.UserDto;
+import com.dev.ops.model.document.Appoinment;
+import com.dev.ops.model.document.User;
+import com.dev.ops.service.implement.UserService;
 
-  @GetMapping("carlos")
-  @ResponseBody
-  public String name() {
-    return "carlos";
+@RestController
+@RequestMapping(value = "users")
+public class UserController implements UserInterface {
+
+  @Autowired
+  UserService userService;
+
+  @RequestMapping(value = "appoinment", method = RequestMethod.POST)
+  @Override
+  public Appoinment createDate(@RequestBody() AppoinmentDto appoinmentDto) {
+    return userService.createAppoinment(appoinmentDto);
   }
+
+  @RequestMapping(value = "create")
+  @Override
+  public User createUser(UserDto userDto) {
+    return userService.createUser(userDto);
+  }
+
 }

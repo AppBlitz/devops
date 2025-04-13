@@ -1,0 +1,7 @@
+### post#1
+POST http://localhost:8080/users/create
+HTTP/1.1 200 
+
+# @_RES
+{"id":"67fb1dd34e5d0560ec52af8f","surname":"Carlos","name":"Carlos","ni":"qwqw","age":0,"dateOfBirth":"1990-01-01","appoinment":[],"resultsDoctor":[]}
+# @_END

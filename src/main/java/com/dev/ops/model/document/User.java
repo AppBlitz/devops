@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -19,6 +20,7 @@ import lombok.ToString;
 @Document("user")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class User {
   @Id
   String id;
@@ -37,6 +39,9 @@ public class User {
   @NonNull
   LocalDate dateOfBirth;
 
+  @Builder.Default
   ArrayList<String> appoinment = new ArrayList<>();
+
+  @Builder.Default
   ArrayList<String> resultsDoctor = new ArrayList<>();
 }

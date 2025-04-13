@@ -1,0 +1,31 @@
+POST {{URL}}users/user
+Content-Type: application/json
+
+{
+"id":"{{ID}}",
+"name":"{{NAME}}",
+"surname":"{{SURNAME}}",
+"dateOfBirth":"{{BIRTH}}",
+"age":"{{AGE}}",
+"ni":"{{NI}}",
+"nameDoctor":"{{DOCTOR}}",
+"dateAppoinment":"{{DATEAPPOINMENT}}",
+"timeAppoinment":"{{TIMEAPPOINMENT}}"
+}
+
+
+###
+
+POST {{URL}}{{CREATE}}
+Content-Type: Application/json
+
+{
+"nameUser": "{{NAME}}",
+"surnameUser": "{{SURNAME}}",
+"ni":"{{NI}}",
+"dateOfBirth":"{{BIRTH}}",
+"age":{{AGE}}
+}
+
+
+###
