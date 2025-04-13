@@ -1,14 +1,19 @@
 package com.dev.ops.service.implement;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dev.ops.dto.appoinment.AppoinmentDto;
 import com.dev.ops.dto.user.UserDto;
 import com.dev.ops.model.document.Appoinment;
+import com.dev.ops.model.document.ResultsDoctor;
 import com.dev.ops.model.document.User;
 import com.dev.ops.model.enums.NumStateAppoinment;
 import com.dev.ops.repository.AppoinmentRepository;
+import com.dev.ops.repository.ResultsDoctorRepository;
 import com.dev.ops.repository.UserRepository;
 import com.dev.ops.service.interfaces.UserInterfaceService;
 import com.dev.ops.validators.Validators;
@@ -21,6 +26,9 @@ public class UserService implements UserInterfaceService {
 
     @Autowired
     AppoinmentRepository appoinmentRepository;
+
+    @Autowired
+    ResultsDoctorRepository resultsDoctorRepository;
 
     @Autowired
     Validators validators;
@@ -51,6 +59,19 @@ public class UserService implements UserInterfaceService {
                 .name(userDto.nameUser())
                 .build();
         return userRepository.save(user);
+    }
+
+    public ResultsDoctor getResults(String name,LocalDate date){
+        ResultsDoctor results=  null;
+        List<ResultsDoctor> r = resultsDoctorRepository.findBynameAppoinment(name);
+        
+        for (ResultsDoctor resultsDoctor : r) {
+                if(resultsDoctor.getDateAppoinment().equals(date)){
+                results=resultsDoctor;
+            }
+        }
+    return results;
+
     }
 
 }
