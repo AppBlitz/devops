@@ -1,15 +1,15 @@
 # vitalApp
 
-##Requeriments
+## Requeriments
 
-###Tools
+### Tools
   - gradle version 8.13
     
 ### languges
   - java version 21
     
-###Framework
+### Framework
    - springBoot version 3.4.4
-###Database
+### Database
 
   - Mongo
