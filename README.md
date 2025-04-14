@@ -14,5 +14,5 @@
 
   - Mongo
 
-### IMpelmentation 
+### Implementation
 for the correct fucnionamiento of the following code what you must have are the following recomendacioens given above, after that peude clone the repository in the location that is most convenient, you must also create a document called configuration.yml where the same pair where the application.yml document is to enter the values you need for the funcioanmiento of the application and the connection to the databases.
