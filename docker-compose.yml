@@ -9,7 +9,10 @@ services:
       - mongodb_data:/data/db
 
   app:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: miusuario/devops-app
     container_name: app
     depends_on:
       - mongodb
