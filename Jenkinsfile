@@ -4,12 +4,10 @@ pipeline {
     environment {
         IMAGE_NAME = 'miusuario/devops-app'  
     }
-
-    stages {
         stage('Clonar') {
             steps {
-                git 'https://github.com/AppBlitz/devops.git' 
-            }
+                git branch: 'main', url: 'https://github.com/AppBlitz/devops.git'
+                }
         }
 
         stage('Compilar aplicación') {
@@ -21,7 +19,7 @@ pipeline {
         stage('Construir imagen Docker') {
             steps {
                 script {
-                    docker.build(DOCKER_IMAGE)
+                    docker.build(IMAGE_NAME)
                 }
             }
         }
@@ -30,15 +28,16 @@ pipeline {
             steps {
                 withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
                     script {
-                        docker.image(DOCKER_IMAGE).push('latest')
+                        docker.image(IMAGE_NAME).push('latest')
                     }
                 }
             }
         }
         stage('Desplegar en Kubernetes') {
             steps {
-                sh 'kubectl apply -f k8s/mongo-deployment.yaml'
-                sh 'kubectl apply -f k8s/app-deployment.yaml'
+                script{
+                    KubernetesDeploy(configs: 'k8s/app-deployment.yaml', 'k8s/mongo-deployment.yaml')
+                }
             }
         }
     }
