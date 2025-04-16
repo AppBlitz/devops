@@ -6,7 +6,14 @@ pipeline {
     }
 
     stages {
-
+        
+        stage('Instalar JDK 21') {
+            steps {
+                sh 'sudo apt-get update && sudo apt-get install -y openjdk-21-jdk'
+            }
+        }  
+         
+        
         stage('Compilar aplicación') {
             steps {
                 sh './gradlew bootJar'
