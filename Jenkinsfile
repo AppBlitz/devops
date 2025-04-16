@@ -6,11 +6,6 @@ pipeline {
     }
 
     stages {
-        stage('Clonar') {
-            steps {
-                git 'https://github.com/AppBlitz/devops.git' 
-            }
-        }
 
         stage('Compilar aplicación') {
             steps {
