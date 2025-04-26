@@ -31,6 +31,9 @@ pipeline {
         }
 
         stage('Desplegar en Kubernetes') {
+            environment {
+                KUBECONFIG = '/var/lib/jenkins/.kube/config'
+            }
             steps {
                 sh 'kubectl apply -f k8s/mongo-deployment.yaml'
                 sh 'kubectl apply -f k8s/app-deployment.yaml'
