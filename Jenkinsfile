@@ -5,6 +5,7 @@ pipeline {
         IMAGE_NAME = 'miusuario/devops-app'  
     }
 
+<<<<<<< HEAD
     stages {
         
 
@@ -14,6 +15,10 @@ pipeline {
             }
         }  
              
+=======
+    stages {   
+        
+>>>>>>> 69e3fbaafb417b66ce99162d59393bbed4f03f19
         stage('Compilar aplicación') {
             steps {
                 sh './gradlew bootJar'
