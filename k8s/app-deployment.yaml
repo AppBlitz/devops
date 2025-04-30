@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: devops-app
-          image: miusuario/devops-app:latest
+          image: jahncm/devops-app:latest
           ports:
             - containerPort: 8080
           env:
