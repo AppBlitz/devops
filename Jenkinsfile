@@ -6,9 +6,22 @@ pipeline {
     }
 
     stages {
+
         stage('Compilar aplicación') {
             steps {
                 sh './gradlew bootJar'
+            }
+        }
+
+        stage('Ejecutar pruebas') {
+            steps {
+                sh './gradlew test'
+            }
+        }
+
+        stage('Publicar reportes JUnit') {
+            steps {
+                junit 'build/test-results/test/*.xml'
             }
         }
 
