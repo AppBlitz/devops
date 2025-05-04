@@ -6,7 +6,7 @@ WORKDIR /app
 COPY . .
 
 # Construimos el JAR (usamos bootJar que es lo común en Spring Boot)
-RUN ./gradle bootJar --no-daemon
+RUN ./gradlew bootJar --no-daemon
 
 # 🐳 Paso 2: Imagen final ligera para ejecutar el JAR
 FROM eclipse-temurin:21-jre
