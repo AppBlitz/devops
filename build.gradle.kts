@@ -48,3 +48,9 @@ tasks.test {
     maxParallelForks = 1 // Solo 1 hilo de prueba
     forkEvery = 0L       // No hacer fork por cada prueba
 }
+
+tasks.withType<ProcessResources> {
+    from("src/main/resources") {
+        include("**/*.yml")
+    }
+}
