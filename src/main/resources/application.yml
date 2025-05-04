@@ -1,6 +1,6 @@
 spring:
   config:
-    import: configuration.yml
+    import: optional:classpath:configuration.yml
   data:
     mongodb:
       host: ${application.database.mongo.host}
