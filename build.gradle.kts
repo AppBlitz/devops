@@ -43,4 +43,8 @@ tasks.test {
         events("passed", "skipped", "failed", "standardOut", "standardError")
         showStandardStreams = true
     }
+
+    // 🔧 AJUSTES CLAVE PARA ENTORNOS COMO JENKINS
+    maxParallelForks = 1 // Solo 1 hilo de prueba
+    forkEvery = 0L       // No hacer fork por cada prueba
 }
