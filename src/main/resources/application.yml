@@ -3,8 +3,10 @@ spring:
     import: optional:classpath:configuration.yml
   data:
     mongodb:
-      host: ${application.database.mongo.host}
-      port: ${application.database.mongo.port}
-      database: ${application.database.mongo.name.database}
+      host: localhost
+      port: 27017
+      database: devOps
   application:
-    name: ${application.name}
+    name: devops
+
+
