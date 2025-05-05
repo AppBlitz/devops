@@ -17,7 +17,7 @@ public class ResultsService {
         ResultsDoctor results = ResultsDoctor.builder()
                 .nameAppoinment(dto.nameAppoinment())
                 .dateAppoinment(dto.dateAppoinment())
-                .nameDoctor(dto.nameDoctor())
+                .nameDoc(dto.nameDoctor())
                 .recommendations(dto.recommendations())
                 .TypeTest(dto.TypeTest())
                 .site(dto.site())
