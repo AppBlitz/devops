@@ -44,5 +44,7 @@ public class User {
 
   @Builder.Default
   ArrayList<String> resultsDoctor = new ArrayList<>();
+
+  String user;
   
 }
