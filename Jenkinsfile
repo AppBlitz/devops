@@ -11,15 +11,6 @@ pipeline {
 
     stages {
 
-        stage('Verificar rama') {
-            when {
-                branch 'main'
-            }
-            steps {
-                echo 'Este pipeline solo se ejecuta en la rama main'
-            }
-        }
-
         stage('Compilar aplicación') {
             steps {
                 sh './gradlew bootJar'
