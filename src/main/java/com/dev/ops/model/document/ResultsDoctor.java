@@ -25,7 +25,7 @@ public class ResultsDoctor {
   LocalDate dateAppoinment;
 
   @NonNull
-  String nameDoctor;
+  String nameDoc;
 
   @NonNull
   String recommendations;
