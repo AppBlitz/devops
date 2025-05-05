@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    
 
     options {
         skipDefaultCheckout()
@@ -14,6 +15,13 @@ pipeline {
     }
 
     stages {
+
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
         stage('Verificar rama') {
             when {
                 branch 'main'
