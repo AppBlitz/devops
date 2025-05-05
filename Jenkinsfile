@@ -1,10 +1,5 @@
 pipeline {
     agent any
-    
-
-    options {
-        skipDefaultCheckout()
-    }
 
     triggers {
         githubPush()
