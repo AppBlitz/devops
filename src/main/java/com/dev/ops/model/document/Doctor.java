@@ -21,6 +21,4 @@ public class Doctor {
 
   NumSpecialization specilization;
 
-  String aja;
-
 }
